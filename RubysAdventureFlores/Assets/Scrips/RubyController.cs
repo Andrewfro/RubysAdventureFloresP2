@@ -7,20 +7,28 @@ using UnityEngine.UIElements;
 
 public class RubyController : MonoBehaviour
 {
+    Rigidbody2D rigidbody2d;
+    float horizontal;
+    float vertical;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        rigidbody2d = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
         //Create two variables to use the unity built in axes
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
+        horizontal = Input.GetAxis("Horizontal");
+        vertical = Input.GetAxis("Vertical");
+    }
 
-        //Create our movenment vector
+    void FixedUpdate()
+    {
+        
+    //Create our movenment vector
         Vector2 position = transform.position;
 
         //Create horizontol and verticol movement
