@@ -8,11 +8,13 @@ public class DamageZone : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         RubyController controller = other.GetComponent<RubyController>();
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (controller != null)
+        {
+            controller.ChangeHealth(-1);
+        }
     }
 }
+       
+
+ 
